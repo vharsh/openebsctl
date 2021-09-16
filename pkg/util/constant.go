@@ -34,11 +34,11 @@ const (
 	// LVMCasType cas type name
 	LVMCasType = "localpv-lvm"
 	// LocalPvHostpathCasType cas type name
-	LocalPvHostpathCasType = "localpv-hostpath"
+	// Warning: Don't change it to localpv-hostpath because that is how it is in production
+	LocalPvHostpathCasType = "local-hostpath"
 	// LocalDeviceCasType cas type name
-	LocalDeviceCasType = "localpv-device"
-	// LocalHostpathCasLabel cas-type label in dynamic-localpv-provisioner
-	LocalHostpathCasLabel = "local-hostpath"
+	// Warning: Don't change it to localpv-device because that is how it is in production
+	LocalDeviceCasType = "local-device"
 	// Healthy cstor volume status
 	Healthy = "Healthy"
 	// StorageKey key present in pvc status.capacity
@@ -67,7 +67,8 @@ const (
 	// ZFSCSIDriver is the name of the ZFS localpv CSI driver
 	ZFSCSIDriver = "zfs.csi.openebs.io"
 	// LocalPVLVMCSIDriver is the name of the LVM LocalPV CSI driver
-	// NOTE: This might also mean local-hostpath, local-device or zfs-localpv later.
+	// NOTE: This might also mean local-hostpath, local-device or zfs-localpv in the future
+	// when all Local PVs get a unified driver
 	LocalPVLVMCSIDriver = "local.csi.openebs.io"
 )
 

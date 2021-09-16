@@ -17,6 +17,8 @@ limitations under the License.
 package volume
 
 import (
+	"strings"
+
 	"github.com/openebs/openebsctl/pkg/client"
 	"github.com/openebs/openebsctl/pkg/util"
 	corev1 "k8s.io/api/core/v1"
@@ -47,7 +49,7 @@ func GetLocalHostpath(c *client.K8sClient, pvList *corev1.PersistentVolumeList, 
 		// Ignore all the other volumes that is not of cas-type local-hostpath
 		// dynamic-local-provisioner has this label for PVs openebs.io/cas-type=local-hostpath
 		// this might be fixed later
-		if util.GetCasTypeFromPV(&pv) != util.LocalHostpathCasLabel {
+		if strings.Contains(util.GetCasTypeFromPV(&pv), "hostpath") {
 			continue
 		}
 		name := pv.Name
