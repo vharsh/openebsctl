@@ -17,7 +17,7 @@ OpenEBSCTL is a kubectl plugin to manage OpenEBS storage components.
 
 ## Project Status
 
-**Alpha**. Under active development and seeking [contributions from the community](#contributing).
+**Beta**. Under active development and seeking [contributions from the community](#contributing).
 The CLI currently supports managing `cStor`, `Jiva`, `LocalPV-LVM`, `LocalPV-ZFS` Cas-Engines.
 
 ## Table of Contents
